@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Cards from './components/card'
 
 function App() {
   const [actor, setActor] = useState([])
@@ -11,11 +12,15 @@ setActor(resp.data);
  , [])
   return (
     <>
-     <ul>
+ <div className="container">
+  <div className="row row-cols g-4 my-5">
         {actor.map((curActor) => (
-          <li key={curActor.id}>{curActor.name}</li>
+          <div className="col-3">
+          <Cards actor={curActor} key={curActor.id}/>
+          </div>
         ))}
-      </ul>
+    </div></div>
+     
     </>
   )
 }
