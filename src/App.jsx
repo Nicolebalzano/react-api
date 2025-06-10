@@ -22,13 +22,12 @@ setActor(resp.data);
     <>
  <div className="container">
   <div className="row row-cols g-4 my-5">
-    <h2>Le attrici del momento</h2>
+    <h1>Migliori attori del momento</h1>
         {actress.map((curActor) => (
           <div className="col-4">
           <Cards actor={curActor} key={curActor.id}/>
           </div>
         ))}
-        <h2>Gli attori del momento</h2>
          {actor.map((curActor) => (
           <div className="col-4">
           <Cards actor={curActor} key={curActor.id}/>
