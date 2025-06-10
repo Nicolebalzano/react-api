@@ -2,8 +2,8 @@
 const Cards = ({actor}) => {
     const {name, birth_year, nationality, biography,image, awards} = actor;
   return   <div className="card g-3 h-100 m-2">
-  <img src={image} className="card-img-top h-100 object-fit-cover" alt={`Immagine di ${name}`} />
-  <div className="card-body">
+  <img src={image} className="card-img-top h-70 object-fit-cover" alt={`Immagine di ${name}`} />
+  <div className="card-body h-100">
     <h2 className="card-title">{name}</h2>
     <p className="card-text">Born in : {birth_year}</p>
       <h5> Nazionalità : </h5><p className="card-text"> {nationality}</p>
