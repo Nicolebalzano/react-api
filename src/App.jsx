@@ -2,19 +2,20 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 function App() {
- const apiUrl = "https://lanciweb.github.io/demo/api/actors/](https://lanciweb.github.io/demo/api/actors/)"
+  const [actor, setActor] = useState([])
  useEffect(() => {
-  axios.get(apiUrl).then((resp) => {
-    const actorList = resp.data.results;
-    <ul>
-    {actorList.map((curActor) => {
-      <li>{curActor.name}</li>
-    })}</ul>
+  axios.get("https://lanciweb.github.io/demo/api/actresses/").then((resp) => {
+setActor(resp.data);
   }
- )}, [])
+ )}
+ , [])
   return (
     <>
-      
+     <ul>
+        {actor.map((curActor) => (
+          <li key={curActor.id}>{curActor.name}</li>
+        ))}
+      </ul>
     </>
   )
 }
